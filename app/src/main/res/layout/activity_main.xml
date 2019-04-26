@@ -11,13 +11,14 @@
     <EditText
         android:id="@+id/editText"
         android:layout_width="418dp"
-        android:layout_height="104dp"
+        android:layout_height="101dp"
         android:ems="10"
         android:gravity="bottom|center"
         android:inputType="text"
         android:text="YOUR INGREDIENTS"
         android:textColor="@color/colorPrimary"
         android:textSize="36sp"
+        android:textStyle="bold"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
