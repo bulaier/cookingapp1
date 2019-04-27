@@ -2,6 +2,6 @@
 <resources>
     <color name="colorPrimary">#FDFCFC</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FA7203</color>
+    <color name="colorAccent">#FF7301</color>
     <color name="Textbox">#969696</color>
 </resources>
