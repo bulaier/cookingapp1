@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/backButt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -34,6 +34,7 @@
         android:layout_marginEnd="307dp"
         android:layout_marginRight="307dp"
         android:layout_marginBottom="37dp"
+        android:clickable="true"
         android:text="BACK"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
