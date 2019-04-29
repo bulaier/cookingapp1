@@ -23,6 +23,21 @@ public class Search {
         }
         return urls;
     }
+    /**
+     *  This function returns a list of names of the recipes we show on the UI. The recipes depend on the ingredients the user enters, so ideally use with search method.
+     * @param recipes The recipes we return. It should be the result (output) of the Search.search function.
+     * @return an arraylist of titles of recipes.
+     */
+    public ArrayList<String> getTitles(ArrayList<Recipe> recipes) {
+        ArrayList<String> names = new ArrayList<>();
+        if (recipes == null) {
+            return names;
+        }
+        for (int i = 0; i < recipes.size(); i++) {
+            names.add(recipes.get(i).getTitle());
+        }
+        return names;
+    }
 
     /**
      *   seperate the ingredients with " ," and all small case letters. No plurals please.
