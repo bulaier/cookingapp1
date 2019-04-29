@@ -21,27 +21,33 @@ public final class Recipe {
     public String getInstruction() {
         return instruction;
     }
+    //return the title.
+    public String getTitle() {
+        return title;
+    }
+    //return the image as an URL.
+    public URL getImage() {
+        return image;
+    }
+
 
     public void setInstruction(String s) {
         instruction = s;
     }
-    //it is a setter of the ingredients, but also returns for convenience.
-    public ArrayList<String> setIngredients(String ingre) {
+    public void setIngredients(String ingre) {
         String[] str = ingre.split(", ");
         for (int i = 0; i < str.length; i++) {
             ingredients.add(str[i]);
         }
-        return ingredients;
     }
     public void setImage(String s) throws Exception {
         image = new URL(s);
     }
+
 
     public Recipe(String ingre, String ttl) {
         setIngredients(ingre);
         title = ttl;
     }
     public Recipe() {}
-
-    //public static final Recipe tunaCasserole =
 }
