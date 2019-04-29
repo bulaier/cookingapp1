@@ -9,8 +9,22 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/newView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/Textbox">
 
     </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="131dp"
+        android:layout_height="61dp"
+        android:layout_alignBottom="@+id/newView"
+        android:background="@color/colorAccent"
+        android:clickable="true"
+        android:text="BACK"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="monospace" />
 
 </RelativeLayout>
