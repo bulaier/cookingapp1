@@ -7,7 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import java.util.ArrayList;
-
+import com.example.cookingapp.lib.Recipe;
+import com.example.cookingapp.lib.Search;
+import com.example.cookingapp.lib.Testing;
 
 public class MainActivity extends AppCompatActivity {
 
