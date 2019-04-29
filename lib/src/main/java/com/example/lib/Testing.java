@@ -2,7 +2,7 @@ package com.example.lib;
 
 public final class Testing {
     private Exception e = new Exception();
-    private static final Recipe[] store = new Recipe[3];
+    public static final Recipe[] store = new Recipe[3];
     public void main() {
         //Macaroni.
         store[0] = new Recipe("macaroni, tuna, chicken soup, cheddar cheese, onion", "Tuna Casserole");
