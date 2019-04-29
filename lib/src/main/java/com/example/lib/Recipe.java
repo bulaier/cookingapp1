@@ -11,21 +11,29 @@ public final class Recipe {
     private URL image;
 
 
-    // the method to return ingredients. all small cases, no plurals.
+    /**
+     *  the method to return ingredients. all small cases, no plurals.
+     * @return an arraylist of ingredients.
+     */
     public ArrayList<String> getIngredients() {
         ArrayList<String> str = new ArrayList<>();
-
         return ingredients;
     }
-    //return instructions as a string. Including the amount of each ingredients.
+    /**
+     *  return instructions as a string. Including the amount of each ingredients.
+     * @return returns a string of instruction.
+     */
     public String getInstruction() {
         return instruction;
     }
-    //return the title.
     public String getTitle() {
         return title;
     }
-    //return the image as an URL.
+
+    /**
+     *  return the image as an URL.
+     * @return a URL.
+     */
     public URL getImage() {
         return image;
     }

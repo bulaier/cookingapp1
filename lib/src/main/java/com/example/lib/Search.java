@@ -2,10 +2,16 @@ package com.example.lib;
 
 import java.util.ArrayList;
 
-public class Search {
-    private static int number = Testing.store.length;
+import static com.example.lib.Testing.store;
 
-    // seperate the ingredients with " ," and all small case letters. No plurals please.
+public class Search {
+    private static int number = store.length;
+
+    /**
+     *   seperate the ingredients with " ," and all small case letters. No plurals please.
+     * @param str the string entered by UI interface. (ingredients the user have)
+     * @return an arraylist of recipes.
+     */
     public static ArrayList<Recipe> search(String str) {
         if (str == null) {
             return null;
@@ -18,14 +24,14 @@ public class Search {
         }
         for (int i = 0; i < number; i++) {
             boolean b = true;
-            for (String name : Testing.store[i].getIngredients()) {
+            for (String name : store[i].getIngredients()) {
                 if (!ingredients.contains(name)) {
                     b = false;
                     break;
                 }
             }
             if (b) {
-                recipes.add(Testing.store[i]);
+                recipes.add(store[i]);
             }
         }
         return recipes;
