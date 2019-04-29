@@ -1,11 +1,28 @@
-package com.example.lib;
+package com.example.cookingapp.lib;
 
+import java.net.URL;
 import java.util.ArrayList;
 
-import static com.example.lib.Testing.store;
+import static com.example.cookingapp.lib.Testing.store;
 
 public class Search {
     private static int number = store.length;
+
+    /**
+     *  This function returns a list of URLs of the recipes we show on the UI. The recipes depend on the ingredients the user enters, so ideally use with search method.
+     * @param recipes The recipes we return. It should be the result (output) of the Search.search function.
+     * @return an arraylist of URLs.
+     */
+    public ArrayList<URL> getImages(ArrayList<Recipe> recipes) {
+        ArrayList<URL> urls = new ArrayList<>();
+        if (recipes == null) {
+            return urls;
+        }
+        for (int i = 0; i < recipes.size(); i++) {
+            urls.add(recipes.get(i).getImage());
+        }
+        return urls;
+    }
 
     /**
      *   seperate the ingredients with " ," and all small case letters. No plurals please.
