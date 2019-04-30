@@ -17,5 +17,18 @@ public final class RecipeView extends AppCompatActivity {
 
         setContentView(R.layout.activty_main_output2);
         setTitle("Show the recipe");
+
+        findViewById(R.id.backButt).setOnClickListener(v -> back());
+    }
+
+    void back() {
+        /*
+           I'm calling MainActivity only because there is no class available for the Activity_main_output.
+           Later it should return to it. However, if that's hard to implement, it's also ok to turn to mainactivity.
+         */
+        Intent intent = new Intent(this, MainActivity.class);
+
+        startActivity(intent);
+        finish();
     }
 }
