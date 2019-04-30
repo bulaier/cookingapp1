@@ -14,16 +14,17 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private static final String TAG = "RecyclerViewAdapter";
 
     private ArrayList<String> mImageNames = new ArrayList<>();
-    private ArrayList<String> mImages = new ArrayList<>();
+    private ArrayList<URL> mImages = new ArrayList<>();
     private Context mContext;
 
-    public RecyclerViewAdapter(ArrayList<String> imageNames, ArrayList<String> images, Context context) {
+    public RecyclerViewAdapter(ArrayList<String> imageNames, ArrayList<URL> images, Context context) {
         mImageNames = imageNames;
         mImages = images;
         mContext = context;

@@ -59,8 +59,8 @@ public final class ShowList extends AppCompatActivity {
     Intent intent = getIntent();
     String string = intent.getStringExtra("input");
     ArrayList<Recipe> res = recipes(string);
-    ArrayList<String> mNames = titles(res);
-    ArrayList<URL> mImageUrls = urls(res);
+    private ArrayList<String> mNames = titles(res);
+    private ArrayList<URL> mImageUrls = urls(res);
     private void initRecyclerView() {
         Log.d(TAG, "initRecyclerView: init recyclerview");
         RecyclerView recyclerView = findViewById(R.id.newView);
