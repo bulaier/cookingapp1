@@ -45,11 +45,11 @@ public class Search {
      * @return an arraylist of recipes.
      */
     public static ArrayList<Recipe> search(String str) {
-        if (str == null) {
-            return null;
-        }
         ArrayList<String> ingredients = new ArrayList<>();
         ArrayList<Recipe> recipes = new ArrayList<>();
+        if (str == null) {
+            return recipes;
+        }
         String[] s = str.split(", ");
         for (int i = 0; i < s.length; i++) {
             ingredients.add(s[i]);
