@@ -52,7 +52,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 //for (int i = 0; i < )
                 //if (mImageNames.get(position).equals())
             }
-        )};
+        });
     }
 
     @Override
