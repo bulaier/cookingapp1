@@ -19,15 +19,6 @@ import java.util.ArrayList;
 public final class ShowList extends AppCompatActivity {
     private static final String TAG = "cookingApp:ShowList";
 
-    protected void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_main_output);
-        setTitle("showing the list");
-
-        findViewById(R.id.backList).setOnClickListener(v -> back());
-    }
-
     // The three ArrayLists you are going to use.
     /**
      *  Returns a list a recipes in ArrayList<Recipe>.
@@ -64,12 +55,16 @@ public final class ShowList extends AppCompatActivity {
         setTitle("showing the list");
 
         findViewById(R.id.backList).setOnClickListener(v -> back());
-        findViewById(R.id.goButton).setOnClickListener(v -> proceed());
     }
+    Intent intent = getIntent();
+    String string = intent.getStringExtra("input");
+    ArrayList<Recipe> res = recipes(string);
+    ArrayList<String> mNames = titles(res);
+    ArrayList<URL> mImageUrls = urls(res);
     private void initRecyclerView() {
         Log.d(TAG, "initRecyclerView: init recyclerview");
         RecyclerView recyclerView = findViewById(R.id.newView);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mImageUrls, mNames, this);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mNames, mImageUrls, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
