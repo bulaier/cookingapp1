@@ -25,23 +25,18 @@ public final class RecipeView extends AppCompatActivity {
         setTitle("Show the recipe");
 
         findViewById(R.id.backButt).setOnClickListener(v -> back());
-
         Intent intent = getIntent();
         String str = intent.getStringExtra("input");
-
-        String ins;
         if (str == null) {
-            ins = "No meal available";
-        } else {
-            ins = "";
-            for (int i = 0; i < Testing.store.length; i++) {
-                if (str.equals(Testing.store[i].getTitle())) {
-                    ins = Testing.store[i].getInstruction();
-                }
-            }
+            str = "";
         }
+        ArrayList<Recipe> res = Search.search(str);
         TextView text = findViewById(R.id.nice);
-        text.setText(ins);
+        if (res.size() == 0) {
+            text.setText("No available recipe found");
+        } else {
+            text.setText(res.get(0).getInstruction());
+        }
     }
 
     void back() {
@@ -51,7 +46,7 @@ public final class RecipeView extends AppCompatActivity {
 
            I now changed it.
          */
-        Intent intent = new Intent(this, ShowList.class);
+        Intent intent = new Intent(this, MainActivity.class);
 
         startActivity(intent);
         finish();

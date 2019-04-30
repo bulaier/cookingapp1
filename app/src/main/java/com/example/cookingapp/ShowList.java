@@ -51,7 +51,7 @@ public final class ShowList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initRecyclerView();
+        //initRecyclerView();
         setContentView(R.layout.activity_main_output);
         setTitle("showing the list");
 
