@@ -13,7 +13,7 @@ public class Search {
      * @param recipes The recipes we return. It should be the result (output) of the Search.search function.
      * @return an arraylist of URLs.
      */
-    public ArrayList<URL> getImages(ArrayList<Recipe> recipes) {
+    public static ArrayList<URL> getImages(ArrayList<Recipe> recipes) {
         ArrayList<URL> urls = new ArrayList<>();
         if (recipes == null) {
             return urls;
@@ -28,7 +28,7 @@ public class Search {
      * @param recipes The recipes we return. It should be the result (output) of the Search.search function.
      * @return an arraylist of titles of recipes.
      */
-    public ArrayList<String> getTitles(ArrayList<Recipe> recipes) {
+    public static ArrayList<String> getTitles(ArrayList<Recipe> recipes) {
         ArrayList<String> names = new ArrayList<>();
         if (recipes == null) {
             return names;

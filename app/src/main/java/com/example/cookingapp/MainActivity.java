@@ -1,11 +1,13 @@
 package com.example.cookingapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import java.net.URL;
 import java.util.ArrayList;
 import com.example.cookingapp.lib.Recipe;
 import com.example.cookingapp.lib.Search;
@@ -24,6 +26,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: started");
         initRecyclerView();
+
+        findViewById(R.id.goButton).setOnClickListener(v -> proceed());
+    }
+
+    /**
+     *  Returns a list a recipes in ArrayList<Recipe>.
+     * @param s the string the user enters.
+     * @return as I said above.
+     */
+    private ArrayList<Recipe> recipes(final String s) {
+        return Search.search(s);
+    }
+
+    /**
+     *  returns a list of titles of the recipe. Helps you to modify recyclerView.
+     * @param recipes the result from the above method "ingredients".
+     * @return as I said above.
+     */
+    private ArrayList<String> titles(final ArrayList<Recipe> recipes) {
+        return Search.getTitles(recipes);
+    }
+
+    private ArrayList<URL> urls(final ArrayList<Recipe> recipes) {
+        return Search.getImages(recipes);
     }
 
     private void initRecyclerView() {
@@ -32,5 +58,10 @@ public class MainActivity extends AppCompatActivity {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(mImageUrls, mNames, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    void proceed() {
+        Intent intent = new Intent(this, ShowList.class);
+
     }
 }
