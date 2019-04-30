@@ -25,6 +25,8 @@ public final class RecipeView extends AppCompatActivity {
         /*
            I'm calling MainActivity only because there is no class available for the Activity_main_output.
            Later it should return to it. However, if that's hard to implement, it's also ok to turn to mainactivity.
+
+           I now changed it.
          */
         Intent intent = new Intent(this, ShowList.class);
 
