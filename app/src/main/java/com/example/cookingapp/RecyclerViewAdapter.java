@@ -48,11 +48,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: clicked on: " + mImageNames.get(position));
+                Log.d(TAG, "onClick: clicked on: " + mImages.get(position));
                 //for (int i = 0; i < )
                 //if (mImageNames.get(position).equals())
             }
-        )};
+        });
     }
 
     @Override
