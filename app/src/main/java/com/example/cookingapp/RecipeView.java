@@ -1,6 +1,7 @@
 package com.example.cookingapp;
 
 import android.app.AppComponentFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import com.example.cookingapp.lib.Search;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 
 import com.example.cookingapp.lib.Recipe;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 
 public final class RecipeView extends AppCompatActivity {
@@ -36,6 +39,18 @@ public final class RecipeView extends AppCompatActivity {
             text.setText("No available recipe found");
         } else {
             text.setText(res.get(0).getInstruction());
+        }
+
+
+    }
+
+    public static Drawable LoadImage(URL url) {
+        try {
+            InputStream is = (InputStream) new url.getContent();
+            Drawable d = Drawable.createFromStream(is, "src name");
+            return d;
+        } catch (Exception e) {
+            return null;
         }
     }
 
