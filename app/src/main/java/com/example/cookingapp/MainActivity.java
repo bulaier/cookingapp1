@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         return ((EditText) findViewById(R.id.input)).getText().toString();
     }
     void proceed() {
-        Intent intent = new Intent(this, RecipeView.class);
+        Intent intent = new Intent(this, ShowList.class);
         intent.putExtra("input", getTextIn());
         startActivity(intent);
         System.out.println("finished intent");
