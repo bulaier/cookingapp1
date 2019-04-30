@@ -97,7 +97,7 @@
         android:clickable="true"
         android:text="Create New List"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/plain_text_input"
+        app:layout_constraintBottom_toTopOf="@id/input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
