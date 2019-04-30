@@ -20,6 +20,7 @@ public final class RecipeView extends AppCompatActivity {
 
         findViewById(R.id.backButt).setOnClickListener(v -> back());
     }
+   // Intent intent = getIntent();
 
     void back() {
         /*
@@ -28,7 +29,7 @@ public final class RecipeView extends AppCompatActivity {
 
            I now changed it.
          */
-        Intent intent = new Intent(this, ShowList.class);
+        Intent intent = new Intent(this, MainActivity.class);
 
         startActivity(intent);
         finish();
