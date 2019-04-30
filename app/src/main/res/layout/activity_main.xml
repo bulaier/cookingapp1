@@ -13,6 +13,7 @@
         android:id="@+id/yourIngredients"
         android:layout_width="match_parent"
         android:layout_height="82dp"
+        android:layout_marginTop="56dp"
         android:ems="10"
         android:gravity="bottom|center"
         android:inputType="text"
@@ -45,7 +46,7 @@
     <EditText
         android:id="@+id/input"
         android:layout_width="377dp"
-        android:layout_height="469dp"
+        android:layout_height="416dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="96dp"
