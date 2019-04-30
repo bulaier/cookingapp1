@@ -3,10 +3,10 @@ package com.example.cookingapp.lib;
 import java.net.URL;
 import java.util.ArrayList;
 
-import static com.example.cookingapp.lib.Testing.store;
+import com.example.cookingapp.lib.Testing;
 
 public class Search {
-    private static int number = store.length;
+    private static int number = Testing.store.length;
 
     /**
      *  This function returns a list of URLs of the recipes we show on the UI. The recipes depend on the ingredients the user enters, so ideally use with search method.
@@ -55,15 +55,19 @@ public class Search {
             ingredients.add(s[i]);
         }
         for (int i = 0; i < number; i++) {
+            if (Testing.store[i] == null) {
+                System.out.println("null store [" + i + "]" + number);
+                break;
+            }
             boolean b = true;
-            for (String name : store[i].getIngredients()) {
+            for (String name : Testing.store[i].getIngredients()) {
                 if (!ingredients.contains(name)) {
                     b = false;
                     break;
                 }
             }
             if (b) {
-                recipes.add(store[i]);
+                recipes.add(Testing.store[i]);
             }
         }
         return recipes;

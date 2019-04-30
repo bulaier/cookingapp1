@@ -15,6 +15,8 @@ import com.example.cookingapp.lib.Search;
 import com.example.cookingapp.lib.Testing;
 
 public class MainActivity extends AppCompatActivity {
+
+    @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -23,13 +25,14 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.createNewList).setOnClickListener(v -> empty());
     }
 
-    String getTextIn(final int editor) {
-        return ((EditText) findViewById(editor)).getText().toString();
+    String getTextIn() {
+        return ((EditText) findViewById(R.id.input)).getText().toString();
     }
     void proceed() {
         Intent intent = new Intent(this, RecipeView.class);
-        //intent.putExtra("input", getTextIn(R.id.input));
+        intent.putExtra("input", getTextIn());
         startActivity(intent);
+        System.out.println("finished intent");
         finish();
     }
     void empty() {

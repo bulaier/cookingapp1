@@ -36,6 +36,7 @@ public final class ShowList extends AppCompatActivity {
     private ArrayList<String> titles(final ArrayList<Recipe> recipes) {
         return Search.getTitles(recipes);
     }
+    private String string;
 
     /**
      *  it gives you the URLs of the pictures
@@ -50,14 +51,20 @@ public final class ShowList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initRecyclerView();
+        //initRecyclerView();
         setContentView(R.layout.activity_main_output);
         setTitle("showing the list");
 
+        Intent intent = getIntent();
+        string = intent.getStringExtra("input");
+        if (string == null) {
+            string = "";
+        }
+
         findViewById(R.id.backList).setOnClickListener(v -> back());
     }
-    Intent intent = getIntent();
-    String string = intent.getStringExtra("input");
+
+
     ArrayList<Recipe> res = recipes(string);
     private ArrayList<String> mNames = titles(res);
     private ArrayList<URL> mImageUrls = urls(res);

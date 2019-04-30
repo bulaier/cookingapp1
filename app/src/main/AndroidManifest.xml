@@ -17,14 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ShowList"/>
+        <activity android:name=".ShowList">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
-        <activity android:name=".RecipeView"/>
-        <intent-filter>
-            <action android:name="android.intent.action.VIEW" />
+        </activity>
+        <activity android:name=".RecipeView">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
         </intent-filter>
+        </activity>
     </application>
 
 </manifest>

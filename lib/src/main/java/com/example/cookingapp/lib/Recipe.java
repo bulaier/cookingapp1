@@ -4,10 +4,11 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public final class Recipe {
-    private ArrayList<String> ingredients;
+    private ArrayList<String> ingredients = new ArrayList<>();
     private String instruction;
     private String title;
     private URL image;
+    private Exception e = new Exception();
 
 
     /**
@@ -52,9 +53,13 @@ public final class Recipe {
     }
 
 
-    public Recipe(String ingre, String ttl) {
+    public Recipe(String ingre, String ttl, String url, String instru) {
         setIngredients(ingre);
         title = ttl;
+        try {
+            setImage(url);
+        } catch (Exception e) {}
+        setInstruction(instru);
     }
     public Recipe() {}
 }
