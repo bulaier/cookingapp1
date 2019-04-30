@@ -32,7 +32,7 @@ public final class RecipeView extends AppCompatActivity {
         String ins;
         if (str == null) {
             ins = "No meal available";
-        }else {
+        } else {
             ins = "";
             for (int i = 0; i < Testing.store.length; i++) {
                 if (str.equals(Testing.store[i].getTitle())) {
